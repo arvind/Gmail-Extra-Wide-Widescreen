@@ -34,16 +34,16 @@ var interval;
 
 (function waitForLoading(){
 	if($("#canvas_frame").contents().find(".oo").length > 0) {
-		$("#canvas_frame").contents().click(hideMessageSidebar);
-		interval = setInterval(hideMessageSidebar, 500);
-		
+        $("#canvas_frame").contents().click(hideMessageSidebar);
+        interval = setInterval(hideMessageSidebar, 500);
+
         window.onfocus = function() {
-		    interval = setInterval(hideMessageSidebar, 500);
+            interval = setInterval(hideMessageSidebar, 500);
         }
-		
-		window.onblur = function() {
-		    clearInterval(interval);
-		}
+
+        window.onblur = function() {
+            clearInterval(interval);
+        }
 	} else {
 		window.setTimeout(waitForLoading, 500);
 	}
